@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
-import 'package:chat_app/src/pages/settings/settings.dart';
-import 'package:chat_app/src/pages/chat/chats.dart';
-import 'package:chat_app/src/pages/home/home.dart';
+import 'package:chat_app/src/pages/settings/Settings.dart';
+import 'package:chat_app/src/pages/chat/Chats.dart';
+import 'package:chat_app/src/pages/home/Home.dart';
 
-class Principal extends StatefulWidget {
+class Main extends StatefulWidget {
 
   @override
-  _PrincipalState createState() => _PrincipalState();
+  _MainState createState() => _MainState();
 }
 
-class _PrincipalState extends State<Principal> {
+class _MainState extends State<Main> {
   PersistentTabController _controller = PersistentTabController(initialIndex: 0);
 
   @override

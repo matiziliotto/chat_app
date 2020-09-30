@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 
 // Import of pages
-import 'package:chat_app/src/pages/principal.dart';
-import 'package:chat_app/src/pages/chat/chat.dart';
+import 'package:chat_app/src/pages/Main.dart';
+import 'package:chat_app/src/pages/chat/Chat.dart';
 
+//TODO: este se saca porque ahora se esta harcordeando todo
+import 'package:chat_app/src/models/Message_model.dart';
 
 Map<String, WidgetBuilder> getAppRoutes(){
+  // TODO: ESTO SE FLETA, SE TIENE QUE CONSULTAR AL BACKEND
+  List<MessageModel> messageList = [
+    MessageModel('Hola matias'),
+    MessageModel('Como estas'),
+    MessageModel('Bien, vos?'),
+  ];
   return <String, WidgetBuilder>{
-    "/principal" : (BuildContext context) =>Principal(),
-    "/chat" : (BuildContext context) =>Chat({'mensaje1': 'Mati1', 'mensaje2': 'Mati2', 'mensaje3': 'Mati3'}, 'Matias'),
+    "/Main" : (BuildContext context) =>Main(),
+    "/Chat" : (BuildContext context) =>Chat(messageList, 'Matias'),
   };
 }

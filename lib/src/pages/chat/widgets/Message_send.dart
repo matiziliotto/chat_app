@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class MensajeEnviado extends StatelessWidget {
+class MessageSend extends StatelessWidget {
   String mensaje;
   String time;
 
-  MensajeEnviado(this.mensaje, this.time);
+  MessageSend(this.mensaje, this.time);
 
   @override
   Widget build(BuildContext context) {

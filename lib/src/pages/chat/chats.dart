@@ -1,4 +1,4 @@
-import 'package:chat_app/src/pages/chat/widget/chat_item.dart';
+import 'package:chat_app/src/pages/chat/widgets/Chat_item.dart';
 import 'package:flutter/material.dart';
 
 class Chats extends StatefulWidget {

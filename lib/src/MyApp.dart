@@ -1,6 +1,8 @@
-import 'package:chat_app/src/routes/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+// File with routes of aplication
+import 'package:chat_app/src/routes/Routes.dart';
 
 class MyApp extends StatefulWidget {
   @override
@@ -15,7 +17,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: "/chat",
+      debugShowCheckedModeBanner: false,
+      initialRoute: "/Chat",
       routes: getAppRoutes(),
     );
   }
