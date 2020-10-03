@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 // Import of pages
 import 'package:chat_app/src/pages/Main.dart';
 import 'package:chat_app/src/pages/chat/Chat.dart';
+import 'package:chat_app/src/pages/login/Login.dart';
 
 //TODO: este se saca porque ahora se esta harcordeando todo
 import 'package:chat_app/src/models/Message_model.dart';
@@ -17,5 +18,6 @@ Map<String, WidgetBuilder> getAppRoutes(){
   return <String, WidgetBuilder>{
     "/Main" : (BuildContext context) =>Main(),
     "/Chat" : (BuildContext context) =>Chat(messageList, 'Matias'),
+    "/Login" : (BuildContext context) =>Login(),
   };
 }

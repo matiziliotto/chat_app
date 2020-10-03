@@ -18,7 +18,16 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/Chat",
+      theme: ThemeData.dark().copyWith(
+        primaryColor: Colors.purple[800],
+        accentColor: Colors.amber,
+      ),
+      // TODO: hacer un buen THEME
+      // theme: ThemeData(
+      //   // Empezar a usar un Theme para no tener que ir poniendo colores aleatorios y usar estos
+      //   // o usar un archivo .dart donde esten todos los colores ya cargados.
+      // ),
+      initialRoute: "/Login",
       routes: getAppRoutes(),
     );
   }

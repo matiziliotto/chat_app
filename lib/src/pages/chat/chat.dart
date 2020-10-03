@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 // Widgets
 import 'package:chat_app/src/pages/chat/widgets/Message_received.dart';
 import 'package:chat_app/src/pages/chat/widgets/Message_send.dart';
+import 'package:flutter/services.dart';
 
 class Chat extends StatefulWidget {
 
@@ -78,10 +79,13 @@ class _ChatState extends State<Chat> {
           Column(
             children: [
               Flexible(
-                child: ListView(
-                  controller: _controller,
-                  padding: EdgeInsets.fromLTRB(5.0, 1.0, 5.0, 1.0),
-                  children: messages
+                child: GestureDetector(
+                  onTap: () => SystemChannels.textInput.invokeMethod('TextInput.hide'),
+                    child: ListView(
+                    controller: _controller,
+                    padding: EdgeInsets.fromLTRB(5.0, 1.0, 5.0, 1.0),
+                    children: messages
+                  ),
                 ),
               ),
               buildMessageTextField(),
@@ -94,6 +98,11 @@ class _ChatState extends State<Chat> {
 
   Widget buildMessageTextField() {
     TextEditingController textEditingController = new TextEditingController();
+    FocusNode _focus = new FocusNode();
+
+    void _onFocusChange(){
+      Timer(Duration(milliseconds: 300), () => _controller.jumpTo(_controller.position.maxScrollExtent));
+    }
 
     void addNewMessage() {
       if (textEditingController.text.trim().isNotEmpty) {
@@ -105,8 +114,10 @@ class _ChatState extends State<Chat> {
         });
       }
 
-      Timer(Duration(milliseconds: 500), () => _controller.jumpTo(_controller.position.maxScrollExtent));
+      Timer(Duration(milliseconds: 300), () => _controller.jumpTo(_controller.position.maxScrollExtent));
     }
+
+    _focus.addListener(_onFocusChange);
 
     return Container(    
       child: Container(
@@ -117,7 +128,8 @@ class _ChatState extends State<Chat> {
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.only(left: 8.0),
-                child: TextField(            
+                child: TextField(
+                  focusNode: _focus,
                   controller: textEditingController,
                   decoration: InputDecoration(
                     border: InputBorder.none,
