@@ -13,10 +13,10 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(22, 54, 90, 1),
+        backgroundColor: Theme.of(context).backgroundColor,
       ),
       body: CustomPaint(
-          painter: DrawerPainter(color: Color.fromRGBO(22, 54, 90, 0.75),), // this is your custom painter
+          painter: DrawerPainter(color: Theme.of(context).secondaryHeaderColor,), // this is your custom painter
           child: ListView(
             padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
             children: <Widget>[

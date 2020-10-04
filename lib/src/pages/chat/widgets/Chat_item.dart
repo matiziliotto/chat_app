@@ -11,7 +11,7 @@ class ChatItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-        splashColor: Color.fromRGBO(62, 111, 163, 1),
+        splashColor: Theme.of(context).accentColor,
         onTap: () => {
           pushNewScreen(
               context,

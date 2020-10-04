@@ -29,7 +29,10 @@ class _LoginState extends State<Login> {
         contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         hintText: "Email",
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0)
+          borderRadius: BorderRadius.circular(32.0),
+          borderSide: BorderSide(
+            color: Theme.of(context).accentColor,
+          )
         )
       ),
     );
@@ -44,13 +47,16 @@ class _LoginState extends State<Login> {
         contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         hintText: "Password",
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0)
+          borderRadius: BorderRadius.circular(32.0),
+          borderSide: BorderSide(
+            color: Theme.of(context).accentColor,
+          )
         )
       ),
     );
 
     final _submitButton = RaisedButton(
-      splashColor: Colors.white,
+      splashColor: Theme.of(context).primaryColor,
       padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
       elevation: 5.0,
       onPressed: () {
@@ -64,11 +70,11 @@ class _LoginState extends State<Login> {
         //   autenticacion(_usuario, _password);
         // }
       },
-      color: Colors.black,
+      color: Theme.of(context).buttonColor,
       child: Text(
         "Ingresar",
         style: TextStyle(
-          color: Color.fromRGBO(240, 240, 240, 1),
+          color: Theme.of(context).primaryColor,
           fontSize: 25.0,
           fontWeight: FontWeight.w300,
         ),
@@ -78,7 +84,7 @@ class _LoginState extends State<Login> {
     final _forgotPassword = GestureDetector(
       onTap: (){
         // Navigator.pushNamed(context, '/RecuperarPassword');
-        print('navegar a olvite mi contraseña'); //TODO
+        print('Navigate to Forgot your password'); //TODO
       },
       child: RichText(
         text: TextSpan(
@@ -86,7 +92,7 @@ class _LoginState extends State<Login> {
             TextSpan(
                 text: "Forgot your password?",
                 style: TextStyle(
-                  color: Color.fromRGBO(240, 240, 240, 1),
+                  color: Theme.of(context).accentColor,
                   fontWeight: FontWeight.w400,
                   fontSize: 18.0,
                 )),
@@ -98,7 +104,7 @@ class _LoginState extends State<Login> {
     final _signUp = GestureDetector(
       onTap: (){
         // Navigator.pushNamed(context, '/RecuperarPassword');
-        print('navegar a olvite mi contraseña'); //TODO
+        print('Navigate to Sign up now'); //TODO
       },
       child: RichText(
         text: TextSpan(
@@ -106,7 +112,7 @@ class _LoginState extends State<Login> {
             TextSpan(
                 text: "Sign in now",
                 style: TextStyle(
-                  color: Color.fromRGBO(240, 240, 240, 1),
+                  color: Theme.of(context).accentColor,
                   fontWeight: FontWeight.w400,
                   fontSize: 18.0,
                 )),
@@ -119,7 +125,7 @@ class _LoginState extends State<Login> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        color: Colors.red,
+        color: Theme.of(context).backgroundColor,
         child: ListView(
           padding: EdgeInsets.all(0),
           controller: _controller,
@@ -133,12 +139,17 @@ class _LoginState extends State<Login> {
                     height: height*0.35,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30), bottomRight: Radius.circular(30)),
-                      color: Colors.grey[400]
+                      color: Theme.of(context).secondaryHeaderColor,
                     ),
                     child: Center(
-                      child: Image(
-                        image: NetworkImage('https://simulacionymedicina.es/wp-content/uploads/2015/11/default-avatar-300x300-1.jpg'),
+                      child: Icon(
+                        Icons.person,
+                        size: 200,
+                        color: Theme.of(context).primaryColor,
                       ),
+                      // child: Image(
+                      //   image: NetworkImage('https://simulacionymedicina.es/wp-content/uploads/2015/11/default-avatar-300x300-1.jpg'),
+                      // ),
                     ),
                   ),
                 ),
@@ -158,7 +169,7 @@ class _LoginState extends State<Login> {
                       style: TextStyle(
                         fontSize: 40,
                         fontFamily: 'Verdana',
-                        color: Colors.white,
+                        color: Theme.of(context).accentColor,
                         decoration: TextDecoration.none,
                       ),
                     ),

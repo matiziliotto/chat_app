@@ -36,7 +36,7 @@ class _ChatState extends State<Chat> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(22, 54, 90, 1),
+        backgroundColor: Theme.of(context).backgroundColor,
         leading: new IconButton(
             icon: Icon(Icons.arrow_back),
             onPressed: () => {
@@ -58,16 +58,17 @@ class _ChatState extends State<Chat> {
                 Text(
                   this.name,
                   style: TextStyle(
-                    color: Colors.white
+                    color: Theme.of(context).accentColor,
                   ),
                   // style: Theme.of(context).textTheme.subhead,
                   // overflow: TextOverflow.clip,
                 ),
                 Text(
                   "Online", // TODO: consultar estado mediante sockets
-                  style: Theme.of(context).textTheme.subtitle.apply(
-                        color: Colors.green,
-                      ),
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.green[300],
+                  ),
                 )
               ],
             )
@@ -87,6 +88,10 @@ class _ChatState extends State<Chat> {
                     children: messages
                   ),
                 ),
+              ),
+              Divider(
+                color: Theme.of(context).accentColor,
+                height: 1,
               ),
               buildMessageTextField(),
             ],
@@ -119,8 +124,9 @@ class _ChatState extends State<Chat> {
 
     _focus.addListener(_onFocusChange);
 
-    return Container(    
+    return Container(
       child: Container(
+        color: Theme.of(context).accentColor,
         padding: EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
         height: 50.0,      
         child: Row(
@@ -136,13 +142,13 @@ class _ChatState extends State<Chat> {
                     hintText: 'Escribe tu mensaje',
                     hintStyle: TextStyle(
                       fontSize: 16.0,
-                      color: Color(0xffAEA4A3),
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                   textInputAction: TextInputAction.send,
                   style: TextStyle(
                     fontSize: 16.0,
-                    color: Colors.black,
+                    color: Theme.of(context).accentColor,
                   ),
                   onSubmitted: (_) {
                     addNewMessage();
@@ -159,7 +165,7 @@ class _ChatState extends State<Chat> {
                 onTap: addNewMessage,
                 child: Icon(
                   Icons.send,
-                  color: Colors.blueAccent,
+                  color: Theme.of(context).primaryColor,
                 ),
               ),
             )

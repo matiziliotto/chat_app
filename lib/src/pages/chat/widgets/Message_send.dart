@@ -14,7 +14,9 @@ class MessageSend extends StatelessWidget {
       children: [
         Text(
           this.time,
-          style: Theme.of(context).textTheme.body2.apply(color: Colors.grey),
+          style: TextStyle(
+            color: Theme.of(context).accentColor,
+          ),
         ),
         SizedBox(width: 15),
         Padding(
@@ -30,7 +32,7 @@ class MessageSend extends StatelessWidget {
                 maxWidth: MediaQuery.of(context).size.width * .6),
                 padding: const EdgeInsets.all(15.0),
                 decoration: BoxDecoration(
-                  color: Colors.green[100],
+                  color: Theme.of(context).focusColor,
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(25),
                     topLeft: Radius.circular(25),
@@ -39,9 +41,9 @@ class MessageSend extends StatelessWidget {
                 ),
                 child: Text(
                   this.mensaje,
-                  style: Theme.of(context).textTheme.body1.apply(
-                        color: Colors.black87,
-                      ),
+                  style: TextStyle(
+                    color: Theme.of(context).accentColor,
+                  ),
                 ),
               ),
             ],

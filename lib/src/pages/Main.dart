@@ -32,19 +32,19 @@ class _MainState extends State<Main> {
             PersistentBottomNavBarItem(
                 icon: Icon(Icons.home),
                 title: ("Home"),
-                activeColor: CupertinoColors.activeBlue,
+                activeColor: Theme.of(context).buttonColor,
                 inactiveColor: CupertinoColors.systemGrey,
             ),
             PersistentBottomNavBarItem(
                 icon: Icon(Icons.chat),
                 title: ("Chats"),
-                activeColor: CupertinoColors.activeBlue,
+                activeColor: Theme.of(context).buttonColor,
                 inactiveColor: CupertinoColors.systemGrey,
             ),
             PersistentBottomNavBarItem(
                 icon: Icon(Icons.settings),
                 title: ("Settings"),
-                activeColor: CupertinoColors.activeBlue,
+                activeColor: Theme.of(context).buttonColor,
                 inactiveColor: CupertinoColors.systemGrey,
             ),
         ];
@@ -55,15 +55,15 @@ class _MainState extends State<Main> {
       screens: _buildScreens(),
       items: _navBarsItems(),
       confineInSafeArea: true,
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).primaryColor,
       handleAndroidBackButtonPress: true,
       resizeToAvoidBottomInset: true, // This needs to be true if you want to move up the screen when keyboard appears.
       stateManagement: true,
       hideNavigationBarWhenKeyboardShows: true, // Recommended to set 'resizeToAvoidBottomInset' as true while using this argument.
-      decoration: NavBarDecoration(
-        borderRadius: BorderRadius.circular(10.0),
-        colorBehindNavBar: Colors.white,
-      ),
+      // decoration: NavBarDecoration(
+      //   borderRadius: BorderRadius.circular(10.0),
+      //   colorBehindNavBar: Colors.white,
+      // ),
       popAllScreensOnTapOfSelectedTab: true,
       itemAnimationProperties: ItemAnimationProperties( // Navigation Bar's items animation properties.
         duration: Duration(milliseconds: 200),
@@ -74,7 +74,7 @@ class _MainState extends State<Main> {
         curve: Curves.ease,
         duration: Duration(milliseconds: 200),
       ),
-      navBarStyle: NavBarStyle.style4, // Choose the nav bar style with this property.
+      navBarStyle: NavBarStyle.style3, // Choose the nav bar style with this property.
     );
   }
 }

@@ -20,17 +20,17 @@ class _SettingsState extends State<Settings> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(22, 54, 90, 1),
+        backgroundColor: Theme.of(context).backgroundColor,
       ),
       body: ListView(
         children: <Widget>[
           ListTile(
             title: Text('Dark Theme'),
-            contentPadding: const EdgeInsets.only(left: 16.0),
             trailing: Transform.scale(
-              scale: 0.4,
+              scale: 1.5,
               child: Switch(
                 value: _darkTheme,
+                activeColor: Theme.of(context).buttonColor,
                 onChanged: (val) {
                   setState(() {
                     _darkTheme = val;

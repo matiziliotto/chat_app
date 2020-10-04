@@ -12,8 +12,13 @@ class _ChatsState extends State<Chats> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(22, 54, 90, 1),
-        title: Text('Chats'),
+        backgroundColor: Theme.of(context).backgroundColor,
+        title: Text(
+          'Chats',
+          style: TextStyle(
+            color: Theme.of(context).accentColor,
+          ),
+        ),
         centerTitle: true,
       ),
       body: ListView(

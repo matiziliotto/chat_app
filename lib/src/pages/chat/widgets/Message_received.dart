@@ -25,7 +25,7 @@ class MessageReceived extends StatelessWidget {
                 maxWidth: MediaQuery.of(context).size.width * .6),
                 padding: const EdgeInsets.all(15.0),
                 decoration: BoxDecoration(
-                  color: Colors.grey[350],
+                  color: Theme.of(context).disabledColor,
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(25),
                     bottomLeft: Radius.circular(25),
@@ -34,9 +34,9 @@ class MessageReceived extends StatelessWidget {
                 ),
                 child: Text(
                   this.mensaje,
-                  style: Theme.of(context).textTheme.body1.apply(
-                        color: Colors.black87,
-                      ),
+                  style: TextStyle(
+                    color: Theme.of(context).accentColor,
+                  ),
                 ),
               ),
             ],
@@ -45,7 +45,9 @@ class MessageReceived extends StatelessWidget {
         SizedBox(width: 15),
         Text(
           this.time,
-          style: Theme.of(context).textTheme.body2.apply(color: Colors.grey),
+          style: TextStyle(
+            color: Theme.of(context).accentColor,
+          ),
         ),
       ],
     );
