@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'custom_painter/Drawer_printer.dart';
+import 'package:chat_app/src/pages/home/widgets/SliderHome.dart';
 
 class Home extends StatefulWidget {
 
@@ -13,17 +12,17 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).backgroundColor,
+        backgroundColor: Theme.of(context).accentColor,
+        elevation: 10,
+        title: Text('Increibles'),
+        centerTitle: true,
       ),
-      body: CustomPaint(
-          painter: DrawerPainter(color: Theme.of(context).secondaryHeaderColor,), // this is your custom painter
-          child: ListView(
-            padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
-            children: <Widget>[
-              // Add your menu e.g. with ListTile
-            ],
-          ),
+      drawer: Drawer(
+
       ),
+      body: Container(
+        child: SilderHome(),
+      )
     );
   }
 }

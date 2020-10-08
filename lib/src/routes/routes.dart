@@ -1,3 +1,4 @@
+import 'package:chat_app/src/pages/splash_screen/Splah_screen.dart';
 import 'package:flutter/material.dart';
 
 // Import of pages
@@ -19,5 +20,6 @@ Map<String, WidgetBuilder> getAppRoutes(){
     "/Main" : (BuildContext context) =>Main(),
     "/Chat" : (BuildContext context) =>Chat(messageList, 'Matias'),
     "/Login" : (BuildContext context) =>Login(),
+    "/SplashScreen" : (BuildContext context) =>SplashScreen(),
   };
 }

@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: themeNotifier.getTheme(),
-      initialRoute: "/Login",
+      initialRoute: "/SplashScreen",
       routes: getAppRoutes(),
     );
   }
